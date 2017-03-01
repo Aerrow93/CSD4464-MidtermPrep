@@ -6,10 +6,6 @@
 package midtermprep;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
@@ -57,13 +53,4 @@ public class GuestbookPost {
     public void setMessage(String message) {
         this.message = message;
     }
-
-//    public String getPostById(int id){
-//        for (Post p: posts){
-//            if (p.getId() == id){
-//                return p;
-//            }
-//        }
-//        return null;
-//    }
 }

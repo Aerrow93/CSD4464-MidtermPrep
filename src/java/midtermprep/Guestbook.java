@@ -23,14 +23,25 @@ import javax.inject.Named;
 @Named
 @ApplicationScoped
 public class Guestbook {
+    
     private List<GuestbookPost> guestbookPosts = new ArrayList<>();
+    private Guestbook currentPost;
 
     public Guestbook() {
+        //currentPost = new Guestbook(-1,-1,"",null,"");
         refresh();
     }
 
     public List<GuestbookPost> getGuestbookPosts() {
         return guestbookPosts;
+    }
+
+    public Guestbook getCurrentPost() {
+        return currentPost;
+    }
+
+    public void setCurrentPost(Guestbook currentPost) {
+        this.currentPost = currentPost;
     }
     
     private void refresh() {
@@ -52,4 +63,28 @@ public class Guestbook {
             guestbookPosts.clear();
         }
     }
+    
+    public GuestbookPost getPostById(int id){
+        for (GuestbookPost g: guestbookPosts){
+            if (g.getId() == id){
+                return g;
+            }
+        }
+        return null;
+    }
+    
+    public String addPost(){
+        return "editPost";
+    }
+    
+    public String editPost(){
+        return "editPost";
+    }
+    
+//    public String cancelPost() {
+//        int id = currentPost.getId();
+//        refresh();
+//        currentPost = getPostById(id);
+//        return "viewPost";
+//    }
 }
