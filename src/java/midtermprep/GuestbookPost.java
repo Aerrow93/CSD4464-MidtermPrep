@@ -58,4 +58,12 @@ public class GuestbookPost {
         this.message = message;
     }
 
+//    public String getPostById(int id){
+//        for (Post p: posts){
+//            if (p.getId() == id){
+//                return p;
+//            }
+//        }
+//        return null;
+//    }
 }

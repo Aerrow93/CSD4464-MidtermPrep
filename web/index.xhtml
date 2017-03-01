@@ -8,13 +8,17 @@
     <h:body>
         <h:dataTable value="#{guestbook.guestbookPosts}" var="post">
             <h:column>
-                #{post.id}
+                <h:commandLink action="#{guestbook.viewPost(id)}">#{post.id}</h:commandLink>
             </h:column>
             <h:column>
                 #{post.author}
             </h:column>
             <h:column>
                 #{post.message}
+            </h:column>
+            <h:column>
+                <h:commandButton value="Edit" action="#{guestbook.editPost}" />
+                <h:commandButton value="Delete" action="#{guestbook.deletePost}" />
             </h:column>
         </h:dataTable>
     </h:body>
